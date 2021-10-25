@@ -13,7 +13,6 @@ import datetime as dt;
 from ctypes import *
 from ctypes import create_unicode_buffer;
 import xlwt;
-# import win32com.client;
 import traceback;
 import shutil;
 
@@ -28,15 +27,6 @@ class SaidaDados:
         self.planilha = plan_dados;
         self.vMDI = pasta_cod;
         self.nomeSubs = nomeSubsistemas;
-
-        #transformando short path em long
-        # BUFFER_SIZE = 500;
-        # buffer = create_unicode_buffer(BUFFER_SIZE);
-	# get_long_path_name = GetLongPathName(path, buffer, BUFFER_SIZE)
-        # get_long_path_name = windll.kernel32.GetLongPathNameW;
-        # get_long_path_name(str(self.caminho), buffer, BUFFER_SIZE);
-        # self.caso = buffer.value[-9:];
-        # self.caso = self.caso.replace("\\","");
         
         # chama os metodos para imprimir as saidas
         self.imprimeTotaisGeracao();
@@ -67,9 +57,6 @@ class SaidaDados:
         #transformando short path em long
         BUFFER_SIZE = 500;
         buffer = create_unicode_buffer(BUFFER_SIZE);
-	# get_long_path_name = GetLongPathName(path, buffer, BUFFER_SIZE)
-        # get_long_path_name = windll.kernel32.GetLongPathNameW;
-        # get_long_path_name(str(self.planilha), buffer, BUFFER_SIZE);
         vModeloJorge = buffer.value;
         
         # escreve versao do MDI
